@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="D:\eclipse workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\eclipse workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\eBaylike Project" path="/eBaylike_Project" reloadable="true" source="org.eclipse.jst.jee.server:eBaylike Project"/><Context docBase="D:\eclipse workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\eBaylike Project" path="/eBay_Project" reloadable="true" source="org.eclipse.jst.jee.server:eBaylike Project"/></Host>
+      <Context docBase="D:\Online-Auctioning-implmentation-DBDS-project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Online-Auctioning-implmentation-DBDS-project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\eBaylike Project" path="/eBaylike_Project" reloadable="true" source="org.eclipse.jst.jee.server:eBaylike Project"/><Context docBase="D:\Online-Auctioning-implmentation-DBDS-project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\eBaylike Project" path="/eBay_Project" reloadable="true" source="org.eclipse.jst.jee.server:eBaylike Project"/></Host>
     </Engine>
   </Service>
 </Server>
