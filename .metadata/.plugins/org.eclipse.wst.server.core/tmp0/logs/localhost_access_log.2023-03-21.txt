@@ -22,3 +22,9 @@
 0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:24:01 -0400] "GET /eBaylike_Project/assets/img/portfolio/safe.png HTTP/1.1" 200 19240
 0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:24:01 -0400] "GET /eBaylike_Project/assets/img/portfolio/submarine.png HTTP/1.1" 200 24330
 0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:24:01 -0400] "GET /eBaylike_Project/assets/favicon.ico HTTP/1.1" 200 23462
+127.0.0.1 - - [21/Mar/2023:22:57:50 -0400] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:57:51 -0400] "GET /eBaylike_Project/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:57:51 -0400] "GET /eBaylike_Project/login.jsp HTTP/1.1" 200 2964
+0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:57:51 -0400] "GET /eBaylike_Project/vendor/jquery/jquery.min.js HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:57:51 -0400] "GET /eBaylike_Project/alert/dist/sweetalert.css HTTP/1.1" 404 805
+0:0:0:0:0:0:0:1 - - [21/Mar/2023:22:57:57 -0400] "POST /eBaylike_Project/login HTTP/1.1" 200 23702
