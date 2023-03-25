@@ -26,11 +26,12 @@ public class RegistrationServlet extends HttpServlet {
     	String uemail = request.getParameter("email");
     	String upwd = request.getParameter("pass");
     	String umobile = request.getParameter("contact");
+    	System.out.println("Reached");
     	Connection con = null;
     	RequestDispatcher dispatcher = null;
     	try {
     		Class.forName("com.mysql.cj.jdbc.Driver");
-    		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube?useSSL=false", "root", "mysql");
+    		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebay?useSSL=false", "root", "manad");
     		PreparedStatement pst = con.prepareStatement("insert into users(uname, upwd, uemail, umobile) values (?,?,?,?)");
     		pst.setString(1, uname);
     		pst.setString(2, upwd);

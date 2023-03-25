@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube?useSSL=false", "root", "mysql");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebay?useSSL=false", "root", "manad");
 			PreparedStatement pst = con.prepareStatement("select * from users where uname=? and upwd=?");
 			pst.setString(1, uname);
 			pst.setString(2, upwd);
@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
 				dispatcher = request.getRequestDispatcher("index.jsp");
 			}
 			else {
+				System.out.println("In");
 				request.setAttribute("status", "failed");
 				dispatcher = request.getRequestDispatcher("login.jsp");
 			}
