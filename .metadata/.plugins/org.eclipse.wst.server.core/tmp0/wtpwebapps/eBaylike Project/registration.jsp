@@ -1,94 +1,176 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Sign Up Form by Colorlib</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-<!-- Font Icon -->
-<link rel="stylesheet"
-	href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css">
+         
+    <!--<title>Login & Registration Form</title>-->
 </head>
-<body>
-<input type="hidden" id="status" value="<%= request.getAttribute("status") %>">
-	<div class="main">
+<body >
+<div class= "cont">
+	<div class="forms">
+            <div class="form signup">
+                <span class="title">Registration</span>
 
-		<!-- Sign up form -->
-		<section class="signup">
-			<div class="container">
-				<div class="signup-content">
-					<div class="signup-form">
-						<h2 class="form-title">Sign up</h2>
-					
-						<form method="post" action="register" class="register-form"
-							id="register-form">
-							<div class="form-group">
-								<label for="name"><i
-									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="name" id="name" placeholder="Your Name" />
-							</div>
-							<div class="form-group">
-								<label for="email"><i class="zmdi zmdi-email"></i></label> <input
-									type="email" name="email" id="email" placeholder="Your Email" />
-							</div>
-							<div class="form-group">
-								<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
-									type="password" name="pass" id="pass" placeholder="Password" />
-							</div>
-							<div class="form-group">
-								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="password" name="re_pass" id="re_pass"
-									placeholder="Repeat your password" />
-							</div>
-							<div class="form-group">
-								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="text" name="contact" id="contact"
-									placeholder="Contact no" />
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="agree-term" id="agree-term"
-									class="agree-term" /> <label for="agree-term"
-									class="label-agree-term"><span><span></span></span>I
-									agree all statements in <a href="#" class="term-service">Terms
-										of service</a></label>
-							</div>
-							<div class="form-group form-button">
-								<input type="submit" name="signup" id="signup"
-									class="form-submit" value="Register" />
-							</div>
-						</form>
-					</div>
-					<div class="signup-image">
-						<figure>
-							<img src="images/signup-image.jpg" alt="sing up image">
-						</figure>
-						<a href="login.jsp" class="signup-image-link">I am already
-							member</a>
-					</div>
-				</div>
-			</div>
-		</section>
+                <form method = "" action="">
+                    <div class="input-field">
+                        <input type="text" name= "name" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name= "email" id= "email" onkeyup=' emailcheck();verify();'placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div><span id = "msg3"></span></div>
+                    <div class="input-field">
+                        <input type="text" name= "phone" id="phone" onkeyup=' phonecheck();verify();' placeholder="Enter your Phone" required>
+                        <i class="uil uil-phone icon"></i>
+                    </div>
+                    <div><span id = "msg2"></span></div>
+                    <div class="input-field">
+                        <input type="text" name= "address" placeholder="Enter your Address" required>
+                        <i class="uil uil-home icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" onkeyup=' check1();check();verify();' name="password" id= "pwd" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        
+                    </div>
+                    <div><span style="font-size: 70%; background: inherit;" id = "msg1"></span></div>
+                    <div class="input-field">
+                        <input type="password" class="password" onkeyup='check();verify();' name="cpassword" id= "confirm_pwd" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                        
+                    </div>
+					<div><span id = "msg"></span></div>
+                    <div class="checkbox-text" id="checkbox">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon" onclick = "verify();">
+                            <label for="termCon" class="text">I accepted all terms and conditions*</label>
+                        </div>
+                    </div>
 
+                    <div>
+                    	<button class="button" type="submit" id="mybtn" >Sign Up</button>
+                    </div>
+                </form>
 
-	</div>
-	<!-- JS -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="js/main.js"></script>
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="login.jsp" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+            </div>
+            </div>
 
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<link rel="stylesheet" href="alert/dist/sweetalert.css">
-	
-	<script type="text/javascript">
-		var status = document.getElementById("status").value;
-		if(status == "success"){
-			swal("Congratulations!","Account created successfully!!", "success");
-		}
-	</script>
-
+    <script type="text/javascript">
+    var e_flag = false,phone_flag = false,pwd_flag = false,c_box = false;
+    var emailcheck = function()
+    {
+    	var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    	var test = re.test(document.getElementById('email').value);
+    	if(document.getElementById('email').value == "")
+    	{
+    		e_flag = false;
+    		document.getElementById('msg3').innerHTML = '';
+    	}
+    	else if(test == true)
+    	{
+    		e_flag = true;
+    		document.getElementById('msg3').innerHTML = '';
+    	}
+    	else
+    	{
+    		e_flag = false;
+    		document.getElementById('msg3').innerHTML = 'Invalid email';
+    	}
+    		
+    }
+    
+    var phonecheck = function()
+    {
+    	var re = /^\d{10}$/;
+    	var test = re.test(document.getElementById('phone').value);
+    	if(document.getElementById('phone').value == "")
+    	{
+    		phone_flag = false;
+    		document.getElementById('msg2').innerHTML = '';
+    	}
+    	else if(test == true)
+    	{
+    		phone_flag = true;
+    		document.getElementById('msg2').innerHTML = '';
+    		
+    	}
+    	else
+    	{
+    		phone_flag = false;
+    		document.getElementById('msg2').innerHTML = 'Invalid Phone';
+    	}
+    		
+    }
+    
+    var check1 = function() {
+    	var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{4,}$/;
+    	var test = re.test(document.getElementById('pwd').value);
+    	if(test == true)
+    	{
+    		
+    		document.getElementById('msg1').innerHTML = '';
+    	}
+    	else
+    	{
+    		
+    		document.getElementById('msg1').style.color = 'red';
+    		document.getElementById('msg1').innerHTML ="Password must be atleast 10 letters and should contains special characters !@#$%^&*";
+    	}
+    		
+    	}
+    var check = function() {
+    	if( document.getElementById('pwd').value == document.getElementById('confirm_pwd').value &&  document.getElementById('confirm_pwd').value == "")
+		  {
+    		pwd_flag = false;
+		  	document.getElementById('msg').innerHTML = '';
+		  }
+    	else if (document.getElementById('pwd').value == document.getElementById('confirm_pwd').value) {
+    		pwd_flag = true;
+    	    document.getElementById('msg').style.color = 'green';
+    	    document.getElementById('msg').innerHTML = 'Password matching';
+    	  }
+    	  else {
+    		  pwd_flag = false;
+    	    document.getElementById('msg').style.color = 'red';
+    	    document.getElementById('msg').innerHTML = 'Passoward not matching';
+    	  }
+    	}
+    var verify = function()
+    {
+    	c_box = document.getElementById('termCon').checked;
+    	if(!(pwd_flag &&  e_flag && phone_flag && c_box))
+    	{
+    		document.getElementById('mybtn').disabled = true;
+    		document.getElementById('mybtn').style.background = 'red';
+    	}
+    	else
+    	{
+    		document.getElementById('mybtn').disabled = false;
+    		document.getElementById('mybtn').style.background = '#4070f4';
+    	}
+    	
+    }
+    
+    
+    
+    </script>
 </body>
-<!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

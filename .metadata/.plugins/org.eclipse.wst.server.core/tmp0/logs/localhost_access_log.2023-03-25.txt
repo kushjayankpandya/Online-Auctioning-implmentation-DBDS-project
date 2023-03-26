@@ -1,0 +1,13 @@
+127.0.0.1 - - [25/Mar/2023:12:10:53 -0400] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:10:55 -0400] "GET /eBaylike_Project/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:10:55 -0400] "GET /eBaylike_Project/login.jsp HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:10:55 -0400] "GET /eBaylike_Project/style.css HTTP/1.1" 404 781
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:11:23 -0400] "GET /eBaylike_Project HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:11:23 -0400] "GET /eBaylike_Project/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:11:23 -0400] "GET /eBaylike_Project/login.jsp HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:11:23 -0400] "GET /eBaylike_Project/style.css HTTP/1.1" 404 781
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:12:11:38 -0400] "POST /eBaylike_Project/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Mar/2023:13:32:36 -0400] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:13:32:37 -0400] "GET /eBaylike_Project/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:13:32:37 -0400] "GET /eBaylike_Project/login.jsp HTTP/1.1" 200 2526
+0:0:0:0:0:0:0:1 - - [25/Mar/2023:13:32:37 -0400] "GET /eBaylike_Project/style.css HTTP/1.1" 404 781

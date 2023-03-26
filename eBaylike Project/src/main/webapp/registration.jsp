@@ -15,56 +15,51 @@
     <!--<title>Login & Registration Form</title>-->
 </head>
 <body >
-<div class= "cont">
-	<div class="forms">
+<input type="hidden" id="status" value="<%= request.getAttribute("status") %>">
+<div class= "cont_div">
+	<div class="forms_div">
             <div class="form signup">
                 <span class="title">Registration</span>
 
-                <form method = "" action="">
-                    <div class="input-field">
+                <form method = "post" action="register">
+                    <div class="input_tag">
                         <input type="text" name= "name" placeholder="Enter your name" required>
                         <i class="uil uil-user"></i>
                     </div>
-                    <div class="input-field">
+                    <div class="input_tag">
                         <input type="text" name= "email" id= "email" onkeyup=' emailcheck();verify();'placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div><span id = "msg3"></span></div>
-                    <div class="input-field">
+                    <div class="input_tag">
                         <input type="text" name= "phone" id="phone" onkeyup=' phonecheck();verify();' placeholder="Enter your Phone" required>
                         <i class="uil uil-phone icon"></i>
                     </div>
                     <div><span id = "msg2"></span></div>
-                    <div class="input-field">
+                    <div class="input_tag">
                         <input type="text" name= "address" placeholder="Enter your Address" required>
                         <i class="uil uil-home icon"></i>
                     </div>
-                    <div class="input-field">
+                    <div class="input_tag">
                         <input type="password" class="password" onkeyup=' check1();check();verify();' name="password" id= "pwd" placeholder="Create a password" required>
                         <i class="uil uil-lock icon"></i>
+						<i class="uil uil-eye-slash showHidePw" id="pwd_eye" onclick="myFunction()"></i>
                         
                     </div>
                     <div><span style="font-size: 70%; background: inherit;" id = "msg1"></span></div>
-                    <div class="input-field">
+                    <div class="input_tag">
                         <input type="password" class="password" onkeyup='check();verify();' name="cpassword" id= "confirm_pwd" placeholder="Confirm a password" required>
                         <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
                         
                     </div>
 					<div><span id = "msg"></span></div>
-                    <div class="checkbox-text" id="checkbox">
-                        <div class="checkbox-content">
-                            <input type="checkbox" id="termCon" onclick = "verify();">
-                            <label for="termCon" class="text">I accepted all terms and conditions*</label>
-                        </div>
-                    </div>
 
                     <div>
-                    	<button class="button" type="submit" id="mybtn" >Sign Up</button>
+                    	<button class="btn" type="submit" id="mybtn" >Sign Up</button>
                     </div>
                 </form>
 
-                <div class="login-signup">
+                <div class="register">
                     <span class="text">Already a member?
                         <a href="login.jsp" class="text login-link">Login Now</a>
                     </span>
@@ -74,6 +69,22 @@
             </div>
 
     <script type="text/javascript">
+	function myFunction() 
+        {
+            var x = document.getElementById("pwd");
+            if (x.type === "password") {
+                x.type = "text";
+                document.getElementById("pwd_eye").classList.remove('uil-eye-slash');
+                document.getElementById("pwd_eye").classList.add('uil-eye');
+            } else {
+                x.type = "password";
+                document.getElementById("pwd_eye").classList.add('uil-eye-slash');
+            }
+        }
+    var status = document.getElementById("status").value;
+	if(status == "failed"){
+		alert("User is already registered with same email");
+	}
     var e_flag = false,phone_flag = false,pwd_flag = false,c_box = false;
     var emailcheck = function()
     {

@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
        
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname = request.getParameter("username");
+		String email = request.getParameter("email");
 		String upwd = request.getParameter("password");
 		HttpSession session = request.getSession();
 		RequestDispatcher dispatcher = null;
@@ -31,13 +31,19 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebay?useSSL=false", "root", "manad");
-			PreparedStatement pst = con.prepareStatement("select * from users where uname=? and upwd=?");
-			pst.setString(1, uname);
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ebay?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "Dwijesh123$");
+			PreparedStatement pst = con.prepareStatement("select * from users where email=? and password=?");
+			pst.setString(1, email);
 			pst.setString(2, upwd);
+
 			ResultSet rs = pst.executeQuery();
 			if(rs.next()) {
-				session.setAttribute("name", rs.getString("uname"));
+				session.setAttribute("name", rs.getString("name"));
+				session.setAttribute("email", rs.getString("email"));
+				PreparedStatement pst2 = con.prepareStatement("update users set logged_in=? where email=?");
+				pst2.setString(1, "yes");
+				pst2.setString(2, email);
+				int rowCount = pst2.executeUpdate();
 				dispatcher = request.getRequestDispatcher("index.jsp");
 			}
 			else {
